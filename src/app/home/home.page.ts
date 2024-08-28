@@ -75,6 +75,7 @@ export class HomePage {
 
   loadMore(event: InfiniteScrollCustomEvent) 
   {
-
+    this.currentPage++;
+    this.loadMovies(event);
   }
 }
