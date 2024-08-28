@@ -28,7 +28,15 @@
    }
 
    <ion-list>
-    @for (item of movies; track item.id) 
+    @if (!isLoading) {
+      <ion-searchbar 
+      (ionInput)="onSearchInput($event)" 
+      animated="true" 
+      placeholder="Search...">
+    </ion-searchbar>
+    
+    }
+    @for (item of filteredMovies(); track item.id) 
     {
       <ion-item button [routerLink]="['/details',item.id]">
         <ion-avatar slot="start">
